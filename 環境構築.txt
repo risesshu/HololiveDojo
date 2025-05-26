@@ -1,0 +1,104 @@
+Git ダウンロード手順
+1.https://gitforwindows.org/でダウンロードをクリック
+2.下のほうにあるGit-2.49.0-64-bit.exeをクリックしてexeをダウンロード
+3.exeを起動
+4.利用規約が表示されるのでNext
+5.保存先が表示されるのでNext
+6.コンポーネント選択、そのままNext
+7.スタートメニューに表示する名前、そのままNext
+8.テキストエディタ選択、そのままNext
+9.ブランチ名の選択画面、そのままNext
+10.PATHがうんたらかんたら、そのままNext
+11.SSH云々、そのままNext
+12.HTTPSの設定、「Use the OpenSSL libraly」を選択してNext
+13.改行コードの設定、「Checkout as-is, commit as-is」を選択してNext
+14.ターミナルの確認、そのままNext
+15.PULLの設定、そのままNext
+16.ログイン認証の設定、そのままNext
+17.オプション選択、全部チェック入れてInstall
+18.終わったら、全部チェック外してFinish
+
+
+TortoiseGit ダウンロード手順
+1.https://tortoisegit.org/download/でfor 64-bit Windowsの下のDownload TortoiseGit 2.17.0.2 64-bit をクリックしてダウンロード
+2.同じページの下にあるLanguage Packsの64-BitとJapaneseが交わったところにあるSetupをクリックして、日本語化するやつダウンロード
+3.ダウンロードしたTortoiseGit-2.17.0.2-64bit.msiを実行
+4.セットアップ画面が表示されたらNext
+5.利用規約でNext
+6.使用するSSHの確認、「OpenSSH, Git default SSH Client」を選択してNExt 
+7.インストールする機能確認、Next
+8.最終確認画面でInstall
+9.アカウント制御画面が出たら、はいをクリック
+10.終わったら、全部チェック外してFinish
+
+TortoiseGit 日本語化手順
+1.ダウンロードしたTortoiseGit-LanguagePack-2.17.0.0-64bit-ja.msiを実行
+2.セットアップ画面が表示されたらNext
+3.アカウント制御画面が出たら、はいをクリック
+4.終わったら、全部チェック外してFinish
+5.Win+Eでエクスプローラ開いて、適当な場所で右クリック（デスクトップとかでいい）
+（Windows11の場合、その他のオプションを確認をクリック）
+6.TortoiseGit→Settingsをクリック
+7.GeneralのLanguageのプルダウンで、日本語（日本）を選択
+8.OKをクリック
+
+
+GitHub 登録手順
+1.https://github.com/loginに移動する
+2.Create an accountをクリック
+3.メールアドレス、パスワード、ユーザ名を入力してContinueをクリック
+4.ロボット対策のやつをクリアする
+5.メールアドレスに送られた番号を打ち込む
+6.サインインする
+
+
+SSH鍵生成・登録手順（最初1回だけやる必要あり）
+1.スタートメニューからwindows powershellを起動する（検索ボックスに打ち込んだら出てくる）
+2.ssh-keygen -t ed25519 -C "XXXXXXX.com"（メールアドレスはGitHubのアドレス）を打ち込んで、Enterで実行する
+3.何も入力せず、Enterを3回押す
+4.The Key's randomart image is:が表示されたらOK（OpenSSH鍵が作成された）
+5.cat ~/.ssh/id_ed25519.pubを入力してEnterを押す
+6.出てきた文字列をコピーしておく（右クリックしたらコピーされる、後で使う）
+7.GitHubにログインして、右上のアイコンをクリックする
+8.Settingをクリックする
+9.左のほうにあるSSH and GPG keysをクリックする
+10.Titleに適当に名前を入力する（SSHKeyとか）
+11.Key欄に、コピーしておいた文字列を全部張り付ける
+12.「Add SSHKey」をクリックする
+
+
+TortoiseGitの設定
+1.Win+Eでエクスプローラ開いて、適当な場所で右クリック（デスクトップとかでいい）
+（Windows11の場合、その他のオプションを確認をクリック）
+2.TortoiseGit→設定をクリック
+3.ネットワーク→SSHに「C:\Windows\System32\OpenSSH\ssh.exe」を入力して、適用をクリック
+4.左にあるGitをクリック、なんか出たらOKをクリック
+5.名前に自分の名前（GitHubに登録した名前）、メールにアドレス（GitHubに登録したやつ）を入力してOKをクリック
+
+
+ファイルを落としてくる（クローン）手順
+1.https://github.com/risesshu/HololiveDojoの、Codeをクリック
+2.SSHを選択して、URLをコピー
+3.ファイルを落としたい場所（デスクトップとか）で右クリックして、Gitクローン（複製）をクリック
+3.URLに、さっきコピーしたやつ貼り付け（もうあるかも）
+4.OKをクリック
+5.なんか出たらはいをクリック
+6.成功と出たら完了
+
+
+ファイルを最新化（プル）する手順（ファイルを誰かが更新するたびにやる必要あり）
+1.「HololiveDojo」フォルダで右クリック→TortoiseGit→プルをクリック
+2.OKをクリック
+3.ファイルが最新化される
+
+
+編集したファイルを同期する手順(コミット、プッシュ)
+※先にプルしておく必要がある
+1.「HololiveDojo」フォルダで右クリック→Gitコミット main をクリック
+2.メッセージに共有したいことを入力して、同期したいファイルにチェックを入れる
+3.コミットをクリックする
+4.成功と出たらコミット（下書きを保存的なやつ）完了
+5.「HololiveDojo」フォルダで右クリック→TortoiseGit→プッシュをクリック
+6.OKをクリック
+7.変更が同期（プッシュ）される
+
