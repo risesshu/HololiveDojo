@@ -54,7 +54,7 @@ GitHub 登録手順
 
 SSH鍵生成・登録手順（最初1回だけやる必要あり）
 1.スタートメニューからwindows powershellを起動する（検索ボックスに打ち込んだら出てくる）
-2.ssh-keygen -t ed25519 -C "XXXXXXX.com"（メールアドレスはGitHubのアドレス）を打ち込んで、Enterで実行する
+2.「ssh-keygen -t ed25519 -C "XXXXXXX.com"」（メールアドレスはGitHubに登録したメールアドレスに変更してください）を打ち込んで、Enterで実行する
 3.何も入力せず、Enterを3回押す
 4.The Key's randomart image is:が表示されたらOK（OpenSSH鍵が作成された）
 5.cat ~/.ssh/id_ed25519.pubを入力してEnterを押す
